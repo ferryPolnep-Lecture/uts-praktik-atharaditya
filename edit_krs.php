@@ -27,8 +27,122 @@ if (isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit KRS</title>
 </head>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+     /* Reset beberapa elemen dasar */
+     * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #34495e;
+        }
+
+        form input[type="text"],
+        form input[type="radio"],
+        form input[type="checkbox"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #dcdcdc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        form input[type="radio"],
+        form input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            margin-bottom: 15px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .button-group input[type="submit"],
+        .button-group a {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-group input[type="submit"] {
+            background-color: #3498db;
+            color: #ffffff;
+        }
+
+        .button-group input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        .button-group a {
+            background-color: #95a5a6;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .button-group a:hover {
+            background-color: #7f8c8d;
+        }
+
+        /* Responsif */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+        }
+</style>
 <body>
-    <h2>Edit KRS</h2>
+
     <form action="update_krs.php" method="post">
     <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
         
